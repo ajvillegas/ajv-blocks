@@ -1,6 +1,6 @@
 # AJV Block Library
 
-A collection of common blocks and core block enhancements for use in client websites.
+A collection of custom WordPress blocks and core block enhancements for use in client websites.
 
 **Contributors**: [ajvillegas](http://profiles.wordpress.org/ajvillegas)  
 **Tags**: [blocks](http://wordpress.org/plugins/tags/blocks), [block library](http://wordpress.org/plugins/tags/block-library), [block editor](http://wordpress.org/plugins/tags/block-editor), [gutenberg](http://wordpress.org/plugins/tags/gutenberg),  
@@ -12,7 +12,7 @@ A collection of common blocks and core block enhancements for use in client webs
 
 ## Description
 
-This plugin adds a collection of common custom WordPress blocks and core block enhancements for use in client websites. It was built with small web agencies in mind to use as a foundation for creating their own unique block library plugins.
+This plugin adds a collection of custom WordPress blocks and core block enhancements for use in client websites. It was built with small web agencies in mind to use as a foundation for creating their own unique block library plugins.
 
 The blocks are registered conditionally so you have full control of which blocks to use on your site. Additionally the block assets are only loaded in the front-end of the site when the blocks are being used. This prevents unecessary assets from slowing down your site by reducing the amount of requests the browser makes on each page load.
 
