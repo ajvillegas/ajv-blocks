@@ -1,0 +1,80 @@
+.block-editor-block-list__layout .wp-block-ajvbl-accordion > .accordion-content {
+	display: none;
+}
+div[data-type='ajvbl/accordion'].has-child-selected > .wp-block-ajvbl-accordion > .accordion-content,
+div[data-type='ajvbl/accordion'].is-selected > .wp-block-ajvbl-accordion > .accordion-content {
+	display: block;
+}
+.wp-block-ajvbl-accordion {
+	margin-bottom: 2.04rem;
+	border: 2px solid #222;
+}
+.block-editor-block-list__layout .wp-block-ajvbl-accordion > .accordion-header {
+	background-color: #fff;
+	position: relative;
+	cursor: pointer;
+	display: block;
+	padding: 20px 60px 20px 20px;
+}
+.block-editor-block-list__layout .wp-block-ajvbl-accordion > .accordion-header .heading {
+	margin: 0;
+	font-size: 25px;
+}
+.block-editor-block-list__layout .wp-block-ajvbl-accordion > .accordion-header .accordion-toggle {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	right: 20px;
+	overflow: hidden;
+}
+.block-editor-block-list__layout .wp-block-ajvbl-accordion > .accordion-header .accordion-toggle::after,
+.block-editor-block-list__layout .wp-block-ajvbl-accordion > .accordion-header .accordion-toggle::before {
+	content: '';
+	width: 22px;
+	height: 3px;
+	border-radius: 2px;
+	position: absolute;
+	top: calc(50% - 2px);
+	left: 50%;
+	background-color: #222;
+	transform: translate(-50%);
+	transition: transform 0.2s ease-in-out;
+}
+.block-editor-block-list__layout .wp-block-ajvbl-accordion > .accordion-header .accordion-toggle::after {
+	transform: translate(-50%) rotate(90deg);
+}
+div[data-type='ajvbl/accordion'].has-child-selected
+	> .wp-block-ajvbl-accordion
+	> .accordion-header
+	.accordion-toggle::after,
+div[data-type='ajvbl/accordion'].is-selected > .wp-block-ajvbl-accordion > .accordion-header .accordion-toggle::after {
+	transform: translate(-50%) rotate(180deg);
+}
+.wp-block-ajvbl-accordion > div {
+	background-color: #fff;
+	margin: 0;
+	padding: 20px 20px 30px;
+}
+.wp-block-ajvbl-accordion .accordion-content .wp-block {
+	max-width: inherit;
+}
+.wp-block-ajvbl-accordion .block-editor-block-list__layout > :first-child {
+	margin-top: 0;
+}
+.wp-block-ajvbl-accordion .block-editor-block-list__layout > :nth-last-child(2) {
+	margin-bottom: 0;
+}
+@media only screen and (min-width: 600px) {
+	.block-editor-block-list__layout .wp-block-ajvbl-accordion > .accordion-header {
+		padding: 20px 80px 20px 40px;
+	}
+	.block-editor-block-list__layout .wp-block-ajvbl-accordion > .accordion-header .accordion-toggle {
+		right: 40px;
+	}
+	.wp-block-ajvbl-accordion > div {
+		padding: 20px 40px 30px;
+	}
+}

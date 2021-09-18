@@ -1,0 +1,23 @@
+/* Grid Block
+--------------------------------------------- */
+
+.wp-block-ajvbl-grid > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	display: grid;
+}
+
+.wp-block-ajvbl-grid > .block-editor-inner-blocks > .block-editor-block-list__layout .wp-block {
+	margin-left: initial;
+	margin-right: initial;
+}
+
+.wp-block-ajvbl-grid > .block-editor-inner-blocks > .block-editor-block-list__layout > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.wp-block-ajvbl-grid
+	.block-editor-block-list__block[data-empty='true']
+	+ .block-editor-block-list__block[data-empty='true']
+	[data-rich-text-placeholder] {
+	opacity: 1;
+}

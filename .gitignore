@@ -1,0 +1,19 @@
+# NPM #
+node_modules/
+/node_modules/
+
+# OS Generated Files #
+**.DS_Store*
+ehthumbs.db
+Thumbs.db
+._*
+
+# Vim Generated Files #
+*.un~
+
+# PhpStorm Files #
+.idea/
+library/vendors/composer
+
+# VSCode Files #
+.vscode/

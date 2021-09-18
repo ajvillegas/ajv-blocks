@@ -1,0 +1,69 @@
+.wp-block-ajvbl-accordion {
+	margin-bottom: 2.04rem;
+	border: 2px solid #222;
+}
+.wp-block-ajvbl-accordion summary {
+	background-color: #fff;
+	position: relative;
+	cursor: pointer;
+	display: block;
+	padding: 20px 60px 20px 20px;
+}
+.wp-block-ajvbl-accordion summary .heading {
+	margin: 0;
+	font-size: 25px;
+}
+.wp-block-ajvbl-accordion summary::-webkit-details-marker {
+	display: none;
+}
+.wp-block-ajvbl-accordion summary .accordion-toggle {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	right: 20px;
+	overflow: hidden;
+}
+.wp-block-ajvbl-accordion summary .accordion-toggle::after,
+.wp-block-ajvbl-accordion summary .accordion-toggle::before {
+	content: '';
+	width: 22px;
+	height: 3px;
+	border-radius: 2px;
+	position: absolute;
+	top: calc(50% - 2px);
+	left: 50%;
+	background-color: #222;
+	transform: translate(-50%);
+	transition: transform 0.2s ease-in-out;
+}
+.wp-block-ajvbl-accordion summary .accordion-toggle::after {
+	transform: translate(-50%) rotate(90deg);
+}
+.wp-block-ajvbl-accordion[open] > summary .accordion-toggle::after {
+	transform: translate(-50%) rotate(180deg);
+}
+.wp-block-ajvbl-accordion > div {
+	background-color: #fff;
+	margin: 0;
+	padding: 20px 20px 30px;
+}
+.wp-block-ajvbl-accordion > div > :first-child {
+	margin-top: 0;
+}
+.wp-block-ajvbl-accordion > div > :last-child {
+	margin-bottom: 0;
+}
+@media only screen and (min-width: 600px) {
+	.wp-block-ajvbl-accordion summary {
+		padding: 20px 80px 20px 40px;
+	}
+	.wp-block-ajvbl-accordion summary .accordion-toggle {
+		right: 40px;
+	}
+	.wp-block-ajvbl-accordion > div {
+		padding: 20px 40px 30px;
+	}
+}

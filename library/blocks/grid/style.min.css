@@ -1,0 +1,13 @@
+.wp-block-ajvbl-grid {
+	display: grid;
+	grid-gap: var(--grid-gutter);
+}
+.wp-block-ajvbl-grid > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+@supports (width: min(var(--child-width), 100%)) {
+	.wp-block-ajvbl-grid {
+		grid-template-columns: repeat(auto-fill, minmax(min(var(--child-width), 100%), 1fr));
+	}
+}

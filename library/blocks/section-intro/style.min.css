@@ -1,0 +1,22 @@
+.wp-block-ajvbl-section-intro .intro-content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+}
+.wp-block-ajvbl-section-intro .intro-content > :first-child {
+	flex-grow: 1;
+	padding: 10px 20px 10px 0;
+	margin: 0;
+}
+.wp-block-ajvbl-section-intro .intro-content > :last-child {
+	border-left: 4px solid #222;
+	flex-basis: 0;
+	flex-grow: 999;
+	min-width: 50% !important;
+	margin: 0;
+	padding: 10px 0 10px 20px;
+}
+.wp-block-iesbvi-section-intro.alignleft,
+.wp-block-iesbvi-section-intro.alignright {
+	margin-bottom: 0 !important;
+}
