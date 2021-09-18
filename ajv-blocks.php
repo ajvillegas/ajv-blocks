@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       AJV Block Library
  * Plugin URI:        https://github.com/ajvillegas/ajv-blocks
- * Description:       A collection of common blocks and core block enhancements.
+ * Description:       A collection of custom blocks and core block enhancements.
  * Version:           1.0.0
  * Author:            Alexis J. Villegas
  * Author URI:        https://www.alexisvillegas.com
