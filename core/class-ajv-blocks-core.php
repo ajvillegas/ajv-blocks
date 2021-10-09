@@ -124,6 +124,15 @@ class AJV_Blocks_Core {
 			return;
 		}
 
+		global $pagenow;
+
+		// Define the WordPress editors script dependency.
+		if ( 'widgets.php' === $pagenow && version_compare( $GLOBALS['wp_version'], '5.8.0', '>=' ) ) {
+			$wp_editor = 'wp-edit-widgets';
+		} else {
+			$wp_editor = 'wp-editor';
+		}
+
 		// Define the file suffix for debugging.
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
@@ -133,7 +142,7 @@ class AJV_Blocks_Core {
 			plugin_dir_url( __FILE__ ) . "js/ajv-core-blocks{$suffix}.js",
 			array(
 				'wp-blocks',
-				'wp-editor',
+				$wp_editor,
 				'wp-element',
 				'wp-components',
 				'wp-i18n',

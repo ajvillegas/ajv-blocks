@@ -130,6 +130,15 @@ class AJV_Blocks_Library {
 	 */
 	public function register_blocks() {
 
+		global $pagenow;
+
+		// Define the WordPress editors script dependency.
+		if ( 'widgets.php' === $pagenow && version_compare( $GLOBALS['wp_version'], '5.8.0', '>=' ) ) {
+			$wp_editor = 'wp-edit-widgets';
+		} else {
+			$wp_editor = 'wp-editor';
+		}
+
 		// Get list of block subdirectories.
 		$blocks = $this->get_subdirectories( plugin_dir_path( __FILE__ ) . 'blocks/*' );
 
@@ -155,7 +164,7 @@ class AJV_Blocks_Library {
 					plugin_dir_url( __FILE__ ) . 'blocks/' . $block . "/{$src}block{$suffix}.js",
 					array(
 						'wp-blocks',
-						'wp-editor',
+						$wp_editor,
 						'wp-element',
 						'wp-components',
 						'wp-i18n',
