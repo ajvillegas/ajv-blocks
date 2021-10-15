@@ -12,7 +12,7 @@
 	const __ = wp.i18n.__;
 	const el = element.createElement;
 	const registerBlockType = blocks.registerBlockType;
-	const { InspectorControls, RichText } = editor;
+	const { InspectorControls, RichText, BlockControls, AlignmentToolbar } = editor;
 	const { Fragment } = element;
 	const { PanelBody, PanelRow, RangeControl, SelectControl } = components;
 
@@ -31,6 +31,10 @@
 				type: 'string',
 				source: 'html',
 				selector: 'h2'
+			},
+			headingAlignment: {
+				type: 'string',
+				default: ''
 			},
 			text: {
 				type: 'string',
@@ -123,6 +127,20 @@
 						)
 					)
 				),
+				el( BlockControls,
+					{
+						key: 'block-controls'
+					},
+					el( AlignmentToolbar,
+						{
+							describedBy: __( 'Change heading alignment', 'ajv-blocks' ),
+							onChange: ( value ) => {
+								props.setAttributes({ headingAlignment: value });
+							},
+							value: props.attributes.headingAlignment
+						}
+					)
+				),
 				el( 'div',
 					{
 						key: 'section-intro',
@@ -146,6 +164,9 @@
 								{
 									tagName: props.attributes.headingTag,
 									className: 'heading',
+									style: {
+										textAlign: props.attributes.headingAlignment
+									},
 									value: props.attributes.heading,
 									allowedFormats: [],
 									onChange: function( content ) {
@@ -196,6 +217,9 @@
 								{
 									tagName: props.attributes.headingTag,
 									className: 'heading',
+									style: {
+										textAlign: props.attributes.headingAlignment
+									},
 									value: props.attributes.heading
 								}
 							),
