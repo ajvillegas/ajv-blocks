@@ -97,14 +97,57 @@ add_filter( 'ajvbl_section-intro_editor_style_url', 'myprefix_section_intro_edit
  */
 function myprefix_section_intro_editor_style_url( $url ) {
 
-  $path = get_stylesheet_directory_uri() . '/assets/css/section-intro-editor.css';
+  $url = get_stylesheet_directory_uri() . '/assets/css/section-intro-editor.css';
 
-  return $path;
+  return $url;
 
 }
 ```
 
 **Notice how one filter requires a file path while the other requires the file URL**. Depending on which one you use, you might have to use either the `get_stylesheet_directory()` or the `get_stylesheet_directory_uri()` functions.
+
+### Overwriting Multiple Blocks
+
+If you need to overwrite the styles for multiple blocks, you could use the following function to avoid repetitive code.
+
+```php
+<?php
+
+add_action( 'after_setup_theme', 'myprefix_filter_ajv_block_styles' );
+/**
+ * Filter the AJV Block Library styles.
+ *
+ * @since 1.0.0
+ */
+function myprefix_filter_ajv_block_styles() {
+  // Define AJV blocks array.
+  $ajv_blocks = array(
+    'accordion',
+    'grid',
+    'section-intro',
+  );
+
+  foreach ( $wd_blocks as $block ) {
+    // Filter the block front-end styles.
+    add_filter(
+      "wdbl_{$block}_style_path",
+      function () use ( $block ) {
+        return get_stylesheet_directory() . "/assets/css/ajv-blocks/{$block}/{$block}.css";
+      }
+    );
+
+    // Filter the block back-end styles.
+    add_filter(
+      "wdbl_{$block}_editor_style_url",
+      function () use ( $block ) {
+        return get_stylesheet_directory_uri() . "/assets/css/ajv-blocks/{$block}/{$block}-editor.css";
+      }
+    );
+  }
+}
+```
+
+This function assumes that the block styles are located inside the `/assets/css/ajv-blocks/` folder and each block has a folder and two files named after each entry in the `$ajv_blocks` array defined in the function.
 
 ## Development
 
